@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Math of Reliability at Scale</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Avishai Ish-Shalom">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/css/reveal.min.css">
+		<link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/css/theme/league.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'http://public.fewbytes.com/reveal.js/3.1.0/css/print/pdf.css' : 'http://public.fewbytes.com/reveal.js/3.1.0/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		var m = window.location.search.match(/theme=([^&]+)/);
+		if( m ) {
+			theme = m[1]; 
+			var link = document.getElementById('theme');
+			link.href = 'http://public.fewbytes.com/reveal.js/3.1.0/css/theme/' + theme + '.css';
+		}
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>The Math of Reliability at Scale</h1>
+					<p>Avishai Ish-Shalom (@nukemberg)</p>
+				</section>
+				<section>
+					<section>
+						<h1>Define "Reliable"</h1>
+						<div class="fragment">
+							<ul>
+								<li>"4 nines"</li>
+								<li>MTBF</li>
+								<li>Failures per Year</li>
+								<li>QoS</li>
+								<li>SLA</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Define "Failure"</h2>
+						<ul class="fragment">
+							<li>Working properly</li>
+							<li>Failure</li>
+							<li class="fragment">Fuzzy</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Failure isn't allways obvious</li>
+								<li>We don't always know what "correct" is</li>
+								<li>which clock is "correct"?</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Past performance does not dictate future performance</h2>
+						<aside class="notes">
+							<ul>
+								<li>The trust bias</li>
+								<li>The rulet bias</li>
+								<li>We don't know the actual probabilities, just a skewed sample</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>The phase space</h2>
+						<img src="images/phase-space.png" height="60%" width="60%" alt="">
+						<ul>
+							<li>Many "failure" states are equivalent</li>
+							<li>Many more "failure" states than "working" states</li>
+							<li>"Failure" statistically more likely</li>
+						</ul>
+					</section>
+					<section>
+						<h2>"Failure" is a bias!</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Reliability measures</h2>
+						<ul>
+							<li>MTBF = mean time between failures (years per failure)</li>
+   						  	<li>&lambda; = failures per year</li>
+							<li>F = failure rate or probability of failure in year</li>
+							<li>R = reliability rate (probability of working in year)</li>
+						</ul>
+						<p>$$\lambda = T / MTFB$$</p>
+						<p>$$F = \lambda / T = 1 / MTBF$$</p>
+						<p>$$R = 1 - F$$</p>
+					</section>
+					<section>
+						<h1>Serial reliability</h1>
+						<p>$$R_{total} = \prod_{i=0}^{n} R_{i}$$</p>
+						<p>$$\lambda_{total} = \sum_{i=0}^{n} \lambda_{i}$$</p>
+					</section>
+					<section>
+						<h2>Serial reliability</h2>
+						<p>$$R_{total} \lt min(R_{i})$$</p>
+						<p>Best ROI - improve the <b>worst</b> component</p>
+					</section>
+					<section>
+						<h2>Parallel reliability (redundancy)</h2>
+						<p>Reliability of redundant system, up to k failures</p>
+						<p>$$R_{total}(n, k) = \sum_{i=0}^{k} {n \choose i} F^{i} R^{n-i}$$</p>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<th>R</th>
+								<th>n</th>
+								<th>k</th>
+								<th>R total</th>
+								<th>MTBF</th>
+							</thead>
+							<tr>
+								<td>0.95</td>
+								<td>10</td>
+								<td>1</td>
+								<td>0.914</td>
+							</tr>
+							<tr>
+								<td>0.95</td>
+								<td>10</td>
+								<td>2</td>
+								<td>0.988</td>
+							</tr>
+							<tr>
+								<td>0.99</td>
+								<td>10</td>
+								<td>2</td>
+								<td>0.9999</td>
+								
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="http://public.fewbytes.com/reveal.js/3.1.0/lib/js/head.min.js"></script>
+		<script src="http://public.fewbytes.com/reveal.js/3.1.0/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+				math: {
+				    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+				    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+				},
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+               		{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        			{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        			{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        			{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/notes/notes.js', async: true },
+					{ src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/math/math.js', async: true}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
