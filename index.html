@@ -114,7 +114,18 @@
 						<p>$$\lambda = T / MTFB$$</p>
 						<p>$$F = \lambda / T = 1 / MTBF$$</p>
 						<p>$$R = 1 - F$$</p>
+						<aside class="notes">
+							<p>typical hdd MTBF - 1M hours (about 130 years); MTBF computed in a lab and extrapolated over time</p>
+						</aside>
 					</section>
+					<section>
+						<h2>The Hot Hand fallacy</h2>
+					</section>
+					<section>
+						<h2>The Gambler's fallacy</h2>
+					</section>
+				</section>
+				<section>
 					<section>
 						<h1>Serial reliability</h1>
 						<p>$$R_{total} = \prod_{i=0}^{n} R_{i}$$</p>
@@ -130,40 +141,20 @@
 						<p>Reliability of redundant system, up to k failures</p>
 						<p>$$R_{total}(n, k) = \sum_{i=0}^{k} {n \choose i} F^{i} R^{n-i}$$</p>
 					</section>
-					<section>
-						<table>
-							<thead>
-								<th>R</th>
-								<th>n</th>
-								<th>k</th>
-								<th>R total</th>
-								<th>MTBF</th>
-							</thead>
-							<tr>
-								<td>0.95</td>
-								<td>10</td>
-								<td>1</td>
-								<td>0.914</td>
-							</tr>
-							<tr>
-								<td>0.95</td>
-								<td>10</td>
-								<td>2</td>
-								<td>0.988</td>
-							</tr>
-							<tr>
-								<td>0.99</td>
-								<td>10</td>
-								<td>2</td>
-								<td>0.9999</td>
-								
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</table>
+					<section data-markdown>
+						<script type="text/template">
+							## Reliability improvement
+
+							Redundant system, 10 components, upto 2 failures
+
+							|R|MTBF|Total R|Total MTBF|improvement factor|
+							|-|-|-|-|-|
+							|0.95|19|0.9885|86|4.5x|
+							|0.99|99|0.9999|8783|88.7x|
+
+							Higher ROI with more reliable components <!-- .element: class="fragment" -->
+						</script>
+
 					</section>
 				</section>
 			</div>
