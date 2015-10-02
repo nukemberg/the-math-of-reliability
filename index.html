@@ -55,6 +55,28 @@
                     </p>
                 </section>
                 <section>
+                    <h2>Math?</h2>
+                    <img src="images/run-away.gif" alt="">
+                </section>
+                <section>
+                    <h2>Excercise: Nagios alerts</h2>
+                    <p>We have a Nagios service with <i>max_check_attempts=5</i> and <i>check_interval</i> of 20 seconds.</p>
+                    <p>Chance of CRITICAL: 3.13%<br />
+                    Chance of not getting any alert
+                    <table>
+                        <tr><td>0.5 hour</td><td>38.6%</td></tr>
+                        <tr>
+                            <td>1 hour</td>
+                            <td>14.9%</td>
+                        </tr>
+                        <tr>
+                            <td>1.5 hours</td>
+                            <td>5.7%</td>
+                        </tr>
+                    </table>
+                    </p>
+                </section>
+                <section>
                     <section>
                         <h1>Define "Reliable"</h1>
                         <div class="fragment">
@@ -73,6 +95,7 @@
                             <li>Working properly</li>
                             <li>Failure</li>
                             <li class="fragment">Fuzzy</li>
+                            <li class="fragment">Don't know</li>
                         </ul>
                         <aside class="notes">
                             <ul>
@@ -81,6 +104,9 @@
                                 <li>which clock is "correct"?</li>
                             </ul>
                         </aside>
+                    </section>
+                    <section>
+                        <h2>1st law of monitoring: The absence of alerts does not indicate success</h2>
                     </section>
                     <section>
                         <h2>The phase space</h2>
