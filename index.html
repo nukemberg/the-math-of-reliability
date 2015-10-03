@@ -55,7 +55,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Math?</h2>
+                    <h2>Math!?</h2>
                     <img src="images/run-away.gif" alt="">
                 </section>
                 <section>
@@ -123,6 +123,9 @@
                 </section>
                 <section>
                     <section>
+                        <h1>Stastical independence</h1>
+                    </section>
+                    <section>
                         <h2>The Hot Hand fallacy</h2>
                     </section>
                     <section>
@@ -155,16 +158,48 @@
                     </section>
                     <section>
                         <h2>Serial reliability</h2>
-                        <section data-markdown>
-                            <script type="text/template">
-                                ||R1|R2|R3|Rtotal|improvement (MTBF)|
-                                |-|-|-|-|-|
-                                |original|0.95|0.99|0.995|0.9357975|-|
-                                |R1|0.995|0.99|0.995|0.98012475|3.21x|
-                                |R2|0.95|0.999|0.995|0.94430475|1.15x|
-                                |R3|0.95|0.99|0.9995|0.94|1.07x|
-                            </script>
-                        </section>
+                        <table>
+                            <thead>
+                                <th>Improved component</th>
+                                <th>R1</th>
+                                <th>R2</th>
+                                <th>R3</th>
+                                <th>R system</th>
+                                <th>Improvement (MTBF)</th>
+                            </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>0.95</td>
+                                <td>0.99</td>
+                                <td>0.995</td>
+                                <td>0.936</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>R1</td>
+                                <td>0.995</td>
+                                <td>0.99</td>
+                                <td>0.995</td>
+                                <td>0.98</td>
+                                <td>X 3.21</td>
+                            </tr>
+                            <tr>
+                                <td>R2</td>
+                                <td>0.95</td>
+                                <td>0.999</td>
+                                <td>0.995</td>
+                                <td>0.944</td>
+                                <td>X 1.15</td>
+                            </tr>
+                            <tr>
+                                <td>R3</td>
+                                <td>0.95</td>
+                                <td>0.99</td>
+                                <td>0.9995</td>
+                                <td>0.94</td>
+                                <td>X 1.07</td>
+                            </tr>
+                        </table>
                         <p style="align: center;">$$R_{total} \lt min(R_{i})$$</p>
                         <p>Best ROI - improve the <b>worst</b> component</p>
                     </section>
@@ -187,8 +222,10 @@
                             Higher ROI with more reliable components
                         </script>
                     </section>
+                </section>
+                <section>
                     <section>
-                        <h2>Correlated failures</h2>
+                        <h1>Stastical dependence</h1>
                         <ul>
                             <li>Shared workload</li>
                             <li>Shared code</li>
@@ -197,14 +234,22 @@
                     </section>
                     <section>
                         <h2>The Base rate fallacy</h2>
+                        <p>$P(A|B) = P(B|A) P(A)/P(B)$</p>
                         <aside class="notes">
-                            <p>in a system with R=0.99, u deploy to production. 10 minutes later production crashes. what is the chance this is due to your commit?</p>
+                            <ul>
+                                <li>drunk driver test</li>
+                                <li>Database failover dillema, github 2012 outage</li>
+                            </ul>
                         </aside>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Dynamic failure modes</h1>
+                        <h1>Complex Adaptive Systems</h1>
+                    </section>
+                    <section>
+                        <h2>Phase changes</h2>
+                        <img src="images/instant-freezing-water.gif" alt="">
                     </section>
                     <section>
                         <h2>Chain Reaction</h2>
@@ -214,11 +259,17 @@
                         <h2>Feedback loops</h2>
                     </section>
                     <section>
-                        <h2>Transients -> permanent</h2>
+                        <h2>System memory</h2>
+                    </section>
+                    <section>
+                        <h2>Transient -> permanent</h2>
                     </section>
                 </section>
+                <section>
+                    <h2>Thank you</h2>
+                    <img src="images/holy-grail-taunt.gif" alt="">
+                </section>
             </div>
-
         </div>
 
         <script src="http://public.fewbytes.com/reveal.js/3.1.0/lib/js/head.min.js"></script>
