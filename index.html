@@ -176,37 +176,29 @@
                         <h2>Serial reliability</h2>
                         <table>
                             <thead>
-                                <th>R1</th>
-                                <th>R2</th>
-                                <th>R3</th>
-                                <th>R system</th>
-                                <th>Improvement (MTBF)</th>
+                                <th>R1</th><th>R2</th><th>R3</th><th>R system</th><th>Improvement (MTBF)</th>
                             </thead>
                             <tr>
-                                <td>0.95</td>
-                                <td>0.99</td>
-                                <td>0.995</td>
-                                <td>0.936</td>
-                                <td>-</td>
+                                <td>0.995</td><td>0.99</td><td>0.95</td><td>0.936</td><td>-</td>
                             </tr>
                             <tr class="fragment">
-                                <td>0.95</td>
+                                <td style="font-size: 120%;"><b>0.9995</b></td>
                                 <td>0.99</td>
-                                <td><b>0.9995</b></td>
+                                <td>0.95</td>
                                 <td>0.94</td>
                                 <td>X 1.07</td>
                             </tr>
                             <tr class="fragment">
-                                <td>0.95</td>
-                                <td><b>0.999</b></td>
                                 <td>0.995</td>
+                                <td style="font-size: 120%;"><b>0.999</b></td>
+                                <td>0.95</td>
                                 <td>0.944</td>
                                 <td>X 1.15</td>
                             </tr>
                             <tr class="fragment">
-                                <td><b>0.995</b></td>
-                                <td>0.99</td>
                                 <td>0.995</td>
+                                <td>0.99</td>
+                                <td style="font-size: 120%;"><b>0.995</b></td>
                                 <td>0.98</td>
                                 <td>X 3.21</td>
                             </tr>
@@ -214,6 +206,7 @@
                         <div class="fragment">
                             <p style="align: center;">$$R_{total} \lt min(R_{i})$$</p>
                             <p>Best ROI - improve the <b>worst</b> component</p>
+                            <p>Improvement is expensive</p>
                         </div>
                     </section>
                     <section>
@@ -234,6 +227,51 @@
 
                             Higher ROI with more reliable components
                         </script>
+                    </section>
+                    <section>
+                        <p>Redundant system, R=0.95</p>
+                        <table>
+                            <thead>
+                                <th>n</th>
+                                <th>k</th>
+                                <th>Overhead</th>
+                                <th>R total</th>
+                            </thead>
+                            <tr class="fragment">
+                                <td>10</td>
+                                <td>1</td>
+                                <td>10%</td>
+                                <td>0.914</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>10</td>
+                                <td>2</td>
+                                <td>20%</td>
+                                <td>0.989</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>100</td>
+                                <td>5</td>
+                                <td>5%</td>
+                                <td>0.616</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>100</td>
+                                <td>9</td>
+                                <td>9%</td>
+                                <td>0.972</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>100</td>
+                                <td>11</td>
+                                <td>11%</td>
+                                <td>0.996</td>
+                            </tr>
+                        </table>
+                        <div class="fragment">
+                            <p>N+1 rule only true for small clusters</p>
+                            <p>Large clusters more cost effective</p>
+                        </div>
                     </section>
                 </section>
                 <section>
