@@ -336,15 +336,31 @@
                         <p>$delay \propto \frac {\rho} {1 - \rho}$</p>
                         <p style="font-size: 80%;">&rho; - system utilization</p>
                         <img src="images/queue-latency.svg" style="border: none; background: none; box-shadow: none;" alt="">
+                        <h4 class="fragment">Throttle your system!</h4>
+                    </section>
+                    <section>
+                        <div data-svg-fragment="images/queue.svg#[*|label=Layer_1]">
+                            <div class="fragment" title="[*|label=Layer_2]"></div>
+                            <div class="fragment" title="[*|label=Layer_3]"></div>
+                        </div>
+                        <h3 class="fragment">Backpressure</h3>
                     </section>
                 </section>
                 <section>
                     <h2>Feedback loops</h2>
                     <p>$\frac {df} {dt} = \alpha f \rightarrow f(t) = A e^{\alpha t}$</p>
+                    <h4 class="fragment">Backoffs, cooldowns</h4>
                 </section>
                 <section>
                     <section>
-                        <h2></h2>
+                        <h2>What have we learned</h2>
+                        <ul>
+                            <li>Redundancy</li>
+                            <li>Overcapacity</li>
+                            <li>Segmentation &amp; compartmentalization</li>
+                            <li>Load shedding, backoffs, cooldowns</li>
+                            <li>Backpressure</li>
+                        </ul>
                     </section>
                     <section>
                         <h2>Thank you</h2>
