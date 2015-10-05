@@ -287,6 +287,9 @@
                         </aside>
                     </section>
                     <section>
+                        <h3>Backup and operational sub-systems should avoid coupling with primaries</h3>
+                    </section>
+                    <section>
                         <p>The police have breathalyzers displaying false drunkenness in 5% of the cases in which the driver is sober. However, the breathalyzers never fail to detect a truly drunk person. One in a thousand drivers are driving drunk</p>
                         <p>A driver is stopped at random and the breathalyzer shows "drunk" result. We assume you don't know anything else about him/her. What is the probability he/she really is drunk?<p>
                     </section>
@@ -322,13 +325,24 @@
                 <section>
                     <section>
                         <h2>Multiple dependencies</h2>
-                        <p>Each service has R=0.999 and 3 dependecies</p>
+                        <div data-svg-fragment="images/layers.svg#[*|label=Layer_1]">
+                            <div class="fragment" title="[*|label=Layer_2]"></div>
+                            <div class="fragment" title="[*|label=Layer_3]"></div>
+                        </div>
+<!--                         <p>Each service has R=0.999 and 3 dependecies</p>
                         <ul>
                             <li>First layer: R=0.996</li>
                             <li>Second layer: R=0987</li>
                             <li>Third layer: R=0.961</li>
                         </ul>
+ -->
                         <h3 class="fragment">Circuit breakers!!</h3>
+                    </section>
+                    <section>
+                        <h2>Queuing delay</h2>
+                        <p>$delay \propto \frac {\rho} {1 - \rho}$</p>
+                        <p style="font-size: 80%;">&rho; - system utilization</p>
+                        <img src="images/queue-latency.svg" style="border: none; background: none; box-shadow: none;" alt="">
                     </section>
                 </section>
                 <section>
@@ -362,7 +376,7 @@
 
         <script src="http://public.fewbytes.com/reveal.js/3.1.0/lib/js/head.min.js"></script>
         <script src="http://public.fewbytes.com/reveal.js/3.1.0/js/reveal.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
         <script>
 
             // Full list of configuration options available here:
@@ -390,11 +404,11 @@
                     { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
                     { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/zoom-js/zoom.js', async: true },
                     { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/notes/notes.js', async: true },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/math/math.js', async: true}
+                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/math/math.js', async: true},
+                    { src: 'js/reveal-svg-fragment.js', condition: function() { return !!document.querySelector( '[data-svg-fragment]' ); }}
                 ]
             });
 
         </script>
-
     </body>
 </html>
