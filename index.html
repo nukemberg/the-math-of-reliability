@@ -241,7 +241,7 @@
                                 <td>10</td>
                                 <td>1</td>
                                 <td>10%</td>
-                                <td>0.914</td>
+                                <td><span style="color: red;">0.914</span></td>
                             </tr>
                             <tr class="fragment">
                                 <td>10</td>
@@ -253,7 +253,7 @@
                                 <td>100</td>
                                 <td>5</td>
                                 <td>5%</td>
-                                <td>0.616</td>
+                                <td><span style="color: red;">0.616</span></td>
                             </tr>
                             <tr class="fragment">
                                 <td>100</td>
@@ -282,6 +282,9 @@
                             <li>Shared code</li>
                             <li>Shared infrastracture</li>
                         </ul>
+                        <aside class="notes">
+                            <p>Dominant failure mode in software</p>
+                        </aside>
                     </section>
                     <section>
                         <p>The police have breathalyzers displaying false drunkenness in 5% of the cases in which the driver is sober. However, the breathalyzers never fail to detect a truly drunk person. One in a thousand drivers are driving drunk</p>
@@ -290,25 +293,28 @@
                     <section>
                         <p>If you answered 0.95, you are prone to the</p>
                         <h2>The Base rate fallacy</h2>
-                        <p>Correct anser: ~ 0.02</p>
+                        <p>Correct answer: ~ 0.02</p>
                     </section>
                     <section>
                         <h3>Explanation</h3>
-                        <p>The base rate is 1:1000 (drunks to general population), so for every 1 drunk detected the breathalyzer will detect 50 sober people as drunk, so given a "drunk" test result there's a 50:1 chance of false positive result</p>
-                        <p>Bayes theorem: $P(A|B) = P(B|A) P(A)/P(B)$</p>
+                        <p>In a 1000 drivers sample, 1 would be drunk and 49.95 (999 x 0.95) would falsely test as drunk</p>
+                        <p>The base rate of being detected as drunk (P(D)=50.95/1000) is much higher than the rate of drunk drivers (P(drunk)=1/1000)</p>
+                        <p style="margin-top: 2em;">Bayes theorem: $P(drunk|D) = P(D|drunk) P(drunk)/P(D)$</p>
+                        <p style="font-size: 80%">$P(D|drunk) = 1, P(drunk)=1/1000, P(D) = 50.95/1000$</p>
                     </section>
                     <section>
                         <h2>Active/Standby failover</h2>
                         <ul>
-                            <li>Failed master detected always</li>
-                            <li>2% probability of false positive (ok master detected as failed)</li>
+                            <li>Failed master always detected</li>
+                            <li>2% probability of false positive (working master detected as failed)</li>
                             <li>~ 95% of failovers are erroneous</li>
                             <li>Erroneous failovers can cause severe issues</li>
                         </ul>
-                        <h3 class="fragment">Disable auto failover, reduce false positives or use active/active</h3>
+                        <h3 class="fragment" style="margin-top: 1em;">Disable auto failover, greatly reduce false positives or use active/active</h3>
                         <aside class="notes">
                             <ul>
                                 <li>Database failover dillema, github 2012 outage</li>
+                                <li>You may be tempted to say quorum decision can solve this, but..</li>
                             </ul>
                         </aside>
                     </section>
