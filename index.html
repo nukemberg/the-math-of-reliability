@@ -345,16 +345,26 @@
                         </div>
                         <h3 class="fragment">Backpressure</h3>
                     </section>
-                </section>
-                <section>
-                    <h2>Feedback loops</h2>
-                    <p>$\frac {df} {dt} = \alpha f \rightarrow f(t) = A e^{\alpha t}$</p>
-                    <h4 class="fragment">Backoffs, cooldowns</h4>
+                    <section>
+                        <h2>Little's Law</h2>
+                        <p>$L = \lambda W$</p>
+                        <p style="font-size: 70%">L - clients in the system, &lambda; - arrival rate, W - wait time (latency)</p>
+                        <div data-svg-fragment="images/cluster-little-law.svg#[*|label=Layer_1]">
+                            <div class="fragment" title="[*|label=Layer_2]"></div>
+                        </div>
+                        <p>$L_i = L_j \rightarrow \frac {\lambda_i} {\lambda_j} = \frac {W_j} {W_i}$</p>
+                    </section>
+                    <section>
+                        <h2>Feedback loops</h2>
+                        <p>$\frac {df} {dt} = \alpha f \rightarrow f(t) = A e^{\alpha t}$</p>
+                        <h4 class="fragment">Backoffs, cooldowns</h4>
+                    </section>
                 </section>
                 <section>
                     <section>
                         <h2>What have we learned</h2>
                         <ul>
+                            <li>Math is important</li>
                             <li>Redundancy</li>
                             <li>Overcapacity</li>
                             <li>Segmentation &amp; compartmentalization</li>
