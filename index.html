@@ -56,8 +56,8 @@
                     <aside class="notes">
                         <ul>
                             <li>Reliability is initimately linked to culture, but that's a different talk</li>
-                            <li>Purpose of this talk: get people to think about reliability analytically</li>
                             <li>You can't "bolt on" reliability</li>
+                            <li>Purpose of this talk: get people to think about reliability analytically</li>
                             <li>Who likes math?</li>
                         </ul>
                     </aside>
@@ -67,7 +67,7 @@
                     <img src="images/run-away.gif" alt="">
                     <aside class="notes">
                         <ul>
-                            <li>People are scared of math, but they shouldn't</li>
+                            <li>People are scared of math, but they shouldn't be</li>
                             <li>It's not about the formulas or numbers, it's about models, formalizing and proving</li>
                             <li>Story of the professor - "it's trivial that..."</li>
                         </ul>
@@ -296,7 +296,7 @@
                         </table>
                         <div class="fragment">
                             <ul>
-                                <li>In large clusters you can actually REDUCE reliability if not enough redudancy</li>
+                                <li>Not enough redundancy will REDUCE your reliability</li>
                                 <li>N+1 rule only true for small clusters</li>
                                 <li>Large clusters more cost effective</li>
                             </ul>
@@ -323,6 +323,12 @@
                     </section>
                     <section>
                         <h3>Backup and operational sub-systems should avoid coupling with primaries</h3>
+                        <aside class="notes">
+                            <ul>
+                                <li>Seems obvious but people get it wrong</li>
+                                <li>Especially when it comes to monitoring and ops tools</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <p>The police have breathalyzers displaying false drunkenness in 5% of the cases in which the driver is sober. However, the breathalyzers never fail to detect a truly drunk person. One in a thousand drivers are driving drunk</p>
@@ -386,6 +392,7 @@
                         <h3 class="fragment">Backpressure</h3>
                         <aside class="notes">
                             <ul>
+                                <li>backend server utliziation too high</li>
                                 <li>load will queue inside your system</li>
                                 <li>limit internal queues and apply backpressure</li>
                             </ul>
