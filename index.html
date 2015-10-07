@@ -56,6 +56,8 @@
                     <aside class="notes">
                         <ul>
                             <li>Reliability is initimately linked to culture, but that's a different talk</li>
+                            <li>Purpose of this talk: get people to think about reliability analytically</li>
+                            <li>You can't "bolt on" reliability</li>
                             <li>Who likes math?</li>
                         </ul>
                     </aside>
@@ -370,6 +372,11 @@
                         <p style="font-size: 70%;">&rho; - system utilization</p>
                         <img src="images/queue-latency.svg" style="border: none; background: none; box-shadow: none;" height="50%" width="50%" alt="">
                         <h3 class="fragment">Throttle your system!</h3>
+                        <aside class="notes">
+                            <ul>
+                                <li>if you go over ~ 80% utilization latency will start rising fast</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <div data-svg-fragment="images/queue.svg#[*|label=Layer_1]">
@@ -377,6 +384,12 @@
                             <div class="fragment" title="[*|label=Layer_3]"></div>
                         </div>
                         <h3 class="fragment">Backpressure</h3>
+                        <aside class="notes">
+                            <ul>
+                                <li>load will queue inside your system</li>
+                                <li>limit internal queues and apply backpressure</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <h2>Little's Law</h2>
@@ -386,6 +399,13 @@
                             <div class="fragment" title="[*|label=Layer_2]"></div>
                         </div>
                         <p>$L_i = L_j \rightarrow \frac {\lambda_i} {\lambda_j} = \frac {W_j} {W_i}$</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>What happens when 1 process failes and returs errors with 1/100 latency?</li>
+                                <li>How do you deal with this?</li>
+                                <li>throttling according to "normal" throughput</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <h2>Feedback loops</h2>
