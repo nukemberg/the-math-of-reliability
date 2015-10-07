@@ -53,10 +53,23 @@
                     <p>
                         <b>Notebook URL:</b> <a href="https://github.com/avishai-ish-shalom/the-math-of-reliability/blob/master/reliability.ipynb">http://fewbytes.com/reliability-notebook</a>
                     </p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Reliability is initimately linked to culture, but that's a different talk</li>
+                            <li>Who likes math?</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Math!?</h2>
                     <img src="images/run-away.gif" alt="">
+                    <aside class="notes">
+                        <ul>
+                            <li>People are scared of math, but they shouldn't</li>
+                            <li>It's not about the formulas or numbers, it's about models, formalizing and proving</li>
+                            <li>Story of the professor - "it's trivial that..."</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Example: Nagios alerts</h2>
@@ -79,6 +92,11 @@
                             </tr>
                         </table>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Nagios was not designed for statistical failures (false negatives)</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <section>
@@ -93,7 +111,8 @@
                             </ul>
                             <aside class="notes">
                                 <ul>
-                                    <li>Lots of buzzwords, all insufficient</li>
+                                    <li>Lots of terms, all insufficient</li>
+                                    <li>"uptime" means "no failure"</li>
                                     <li>Need to define what is failure</li>
                                 </ul>
                             </aside>
@@ -101,7 +120,7 @@
                     </section>
                     <section>
                         <h2>Define "Failure"</h2>
-                        <h3 class="fragment">Not working within specified parameters</h3>
+                        <h3 class="fragment">System operating outside specified parameters</h3>
                         <h3 class="fragment">In reality: users are complaining!</h3>
                     </section>
                     <section>
@@ -123,6 +142,7 @@
                                 <li>Failure isn't allways obvious</li>
                                 <li>which clock is "correct"? which value?</li>
                                 <li>We don't always know what "correct" is</li>
+                                <li>We don't always know what the system state is. e.g. our telemetry can be wrong</li>
                             </ul>
                         </aside>
                     </section>
@@ -139,12 +159,10 @@
                         <img src="images/cat-failure.gif" alt="">
                     </section>
                     <section>
-                        <h1>Statistical independence</h1>
+                        <h2>Statistical independence</h2>
                     </section>
                     <section>
                         <h2>The Hot Hand fallacy</h2>
-                    </section>
-                    <section>
                         <h2>The Gambler's fallacy</h2>
                     </section>
                     <section>
@@ -269,8 +287,11 @@
                             </tr>
                         </table>
                         <div class="fragment">
-                            <p>N+1 rule only true for small clusters</p>
-                            <p>Large clusters more cost effective</p>
+                            <ul>
+                                <li>In large clusters you can actually REDUCE reliability if not enough redudancy</li>
+                                <li>N+1 rule only true for small clusters</li>
+                                <li>Large clusters more cost effective</li>
+                            </ul>
                         </div>
                     </section>
                 </section>
@@ -336,7 +357,7 @@
                         <p>$delay \propto \frac {\rho} {1 - \rho}$</p>
                         <p style="font-size: 70%;">&rho; - system utilization</p>
                         <img src="images/queue-latency.svg" style="border: none; background: none; box-shadow: none;" height="50%" width="50%" alt="">
-                        <h4 class="fragment">Throttle your system!</h4>
+                        <h3 class="fragment">Throttle your system!</h3>
                     </section>
                     <section>
                         <div data-svg-fragment="images/queue.svg#[*|label=Layer_1]">
@@ -357,19 +378,20 @@
                     <section>
                         <h2>Feedback loops</h2>
                         <p>$\frac {df} {dt} = \alpha f \rightarrow f(t) = A e^{\alpha t}$</p>
-                        <h4 class="fragment">Backoffs, cooldowns</h4>
+                        <h3 class="fragment">Backoffs, cooldowns</h3>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>What have we learned</h2>
+                        <h2>Takeaways</h2>
                         <ul>
                             <li>Math is important</li>
+                            <li>ROI</li>
                             <li>Redundancy</li>
                             <li>Overcapacity</li>
                             <li>Segmentation &amp; compartmentalization</li>
                             <li>Load shedding, backoffs, cooldowns</li>
-                            <li>Backpressure</li>
+                            <li>Throttling, Backpressure</li>
                         </ul>
                     </section>
                     <section>
