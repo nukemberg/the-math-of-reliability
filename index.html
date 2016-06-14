@@ -14,25 +14,25 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/css/reveal.min.css">
-        <link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/css/theme/league.css" id="theme">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/league.css" id="theme">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="http://public.fewbytes.com/reveal.js/3.1.0/lib/css/zenburn.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = window.location.search.match( /print-pdf/gi ) ? 'http://public.fewbytes.com/reveal.js/3.1.0/css/print/pdf.css' : 'http://public.fewbytes.com/reveal.js/3.1.0/css/print/paper.css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         var m = window.location.search.match(/theme=([^&]+)/);
         if( m ) {
-            theme = m[1]; 
+            theme = m[1];
             var link = document.getElementById('theme');
-            link.href = 'http://public.fewbytes.com/reveal.js/3.1.0/css/theme/' + theme + '.css';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/' + theme + '.css';
         }
     </script>
 
@@ -50,8 +50,9 @@
                 <section>
                     <h1 style="font-size: 120px;">The Math of Reliability</h1>
                     <p>Avishai Ish-Shalom (@nukemberg)</p>
-                    <p>
-                        <b>Notebook URL:</b> <a href="https://github.com/avishai-ish-shalom/the-math-of-reliability/blob/master/reliability.ipynb">http://fewbytes.com/reliability-notebook</a>
+                    <p style="display: inline-block; vertical-align: bottom;">
+                        <b>repo:</b> <a href="http://github.com/avishai-ish-shalom/the-math-of-reliability">github.com/avishai-ish-shalom/the-math-of-reliability</a>
+                        <br>Companion IPython notebook: <a href="https://github.com/avishai-ish-shalom/the-math-of-reliability/blob/master/reliability.ipynb">reliability.ipynb</a>
                     </p>
                     <aside class="notes">
                         <ul>
@@ -74,7 +75,7 @@
                     </aside>
                 </section>
                 <section>
-                    <h2>Example: Nagios alerts</h2>
+                    <h2>Example: Nagios-like alerts</h2>
                     <div>
                         <p>Nagios service with <i>max_check_attempts=4</i>, <i>check_interval</i>=15sec</p>
                         <p>Service experiencing 40% error rate</p>
@@ -152,7 +153,7 @@
                         <h3>The absence of evidence <br>is not the evidence of absence</h3>
                     </section>
                     <section data-transition="fade-in">
-                        <h3>The absence of alerts<br>is not the evidence of working</h3>
+                        <h3>The absence of alerts<br>is not the evidence of proper operation</h3>
                     </section>
                 </section>
                 <section>
@@ -177,7 +178,13 @@
                         </div>
                     </section>
                     <section>
-                        <h2>Past performance does not dictate future performance*</h2>
+                        <h2>Past performance does not predict future performance*</h2>
+                        <aside class="notes">
+                          <ul>
+                            <li>This is what statistical independence means. future events are independent of past events</li>
+                            <li>In general, we can only make statistical prediction over a large number of similar systems</li>
+                          </ul>
+                        </aside>
                     </section>
                     <section>
                         <h2>Reliability measures</h2>
@@ -342,7 +349,7 @@
                         <h3 style="margin-top: 1em;">A driver was stopped and breathalyzer shows he's drunk<br/>What's the probability he's really drunk?</h3>
                     </section>
                     <section>
-                        <p>If you answered 0.95, you are prone to the</p>
+                        <p>If you answered 0.95, you have fallen for the</p>
                         <h2>The Base rate fallacy</h2>
                         <p>Correct answer: ~ 0.02</p>
                     </section>
@@ -366,6 +373,7 @@
                             <ul>
                                 <li>Database failover dillema, github 2012 outage</li>
                                 <li>You may be tempted to say quorum decision can solve this, but..</li>
+                                <li>Either reduce false positives drastically or reduce failover issues</li>
                             </ul>
                         </aside>
                     </section>
@@ -433,7 +441,7 @@
                     </section>
                     <section>
                         <h2>Thank you</h2>
-                        <img src="images/holy-grail-taunt.gif" alt="">                        
+                        <img src="images/holy-grail-taunt.gif" alt="">
                     </section>
                 </section>
                 <section>
@@ -458,8 +466,8 @@
             </div>
         </div>
 
-        <script src="http://public.fewbytes.com/reveal.js/3.1.0/lib/js/head.min.js"></script>
-        <script src="http://public.fewbytes.com/reveal.js/3.1.0/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/lib/js/head.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
         <script>
 
@@ -482,13 +490,13 @@
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/zoom-js/zoom.js', async: true },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/notes/notes.js', async: true },
-                    { src: 'http://public.fewbytes.com/reveal.js/3.1.0/plugin/math/math.js', async: true},
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/zoom-js/zoom.js', async: true },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/notes/notes.js', async: true },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.js', async: true},
                     { src: 'js/reveal-svg-fragment.js', condition: function() { return !!document.querySelector( '[data-svg-fragment]' ); }}
                 ]
             });
