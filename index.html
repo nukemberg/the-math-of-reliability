@@ -48,7 +48,7 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
               <section>
-                <img src="images/guinness.jpg" style="height: 60%; width: 60%;" alt="">
+                <img src="images/guinness.jpg" style="height: 50%; width: 50%;" alt="">
                 <aside class="notes">
                   <p>t-test, introduced 1908 by william gosset working for guinness. published under the pen name "A. Student" because Claude Guinness treaeted his use of math in the brewry as trade secret</p>
                 </aside>
@@ -65,7 +65,7 @@
                             <li>Reliability is initimately linked to culture, but that's a different talk</li>
                             <li>You can't "bolt on" reliability</li>
                             <li>Purpose of this talk: get people to think about reliability analytically</li>
-                            <li>Who likes math?</li>
+                            <li>Who's using math daily?</li>
                         </ul>
                     </aside>
                 </section>
@@ -141,8 +141,8 @@
                         <ul class="fragment">
                             <li>Working OK</li>
                             <li>Failure</li>
+                            <li class="fragment">Unknown</li>
                             <li class="fragment">Fuzzy</li>
-                            <li class="fragment">Don't know</li>
                         </ul>
 
                         <aside class="notes">
@@ -213,9 +213,6 @@
                         <h2>Serial reliability</h2>
                         <h4>$$R_{total} = \prod_{i=0}^{n} R_{i}$$</h4>
                         <!-- <p>$$\lambda_{total} = \sum_{i=0}^{n} \lambda_{i}$$</p> -->
-                        <aside class="notes">
-                          <p>Total reliability always lower than worse component</p>
-                        </aside>
                     </section>
                     <section>
                         <h2>Serial reliability</h2>
@@ -253,6 +250,10 @@
                             <p>Best ROI - improve the <b>worst</b> component</p>
                             <p>Improvement is expensive</p>
                         </div>
+                        <aside class="notes">
+                          <p>Total reliability always lower than worse component. No point using disproportionally reliable components</p>
+                          <p>Cheaper way: clusters!</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Parallel reliability (redundancy)</h2>
@@ -272,6 +273,9 @@
 
                             Higher ROI with more reliable components
                         </script>
+                        <aside class="notes">
+                          <p>Is an argument for using enterprise-grade hardware???</p>
+                        </aside>
                     </section>
                     <section>
                         <p>Redundant system, R=0.95</p>
@@ -321,6 +325,9 @@
                                 <li>Large clusters more cost effective</li>
                             </ul>
                         </div>
+                        <aside class="notes">
+                          <p>Use many small/cheap identical components</p>
+                        </aside>
                     </section>
                 </section>
                 <section>
@@ -396,6 +403,9 @@
                             <div class="fragment" title="[*|label=Layer_3]"></div>
                         </div>
                         <h3 class="fragment">Circuit breakers!!</h3>
+                        <aside class="notes">
+                          <p>microservices FTW</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Queuing delay</h2>
@@ -417,7 +427,7 @@
                         <h3 class="fragment">Backpressure</h3>
                         <aside class="notes">
                             <ul>
-                                <li>backend server utliziation too high</li>
+                                <li>backend server utilization too high</li>
                                 <li>load will queue inside your system</li>
                                 <li>limit internal queues and apply backpressure</li>
                             </ul>
