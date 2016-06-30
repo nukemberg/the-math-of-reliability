@@ -47,6 +47,12 @@
 
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
+              <section>
+                <img src="images/guinness.jpg" style="height: 60%; width: 60%;" alt="">
+                <aside class="notes">
+                  <p>t-test, introduced 1908 by william gosset working for guinness. published under the pen name "A. Student" because Claude Guinness treaeted his use of math in the brewry as trade secret</p>
+                </aside>
+              </section>
                 <section>
                     <h1 style="font-size: 120px;">The Math of Reliability</h1>
                     <p>Avishai Ish-Shalom (@nukemberg)</p>
@@ -65,7 +71,7 @@
                 </section>
                 <section>
                     <h2>Math!?</h2>
-                    <img src="images/run-away.gif" alt="">
+                    <img src="images/run-away.gif" style="height: 55%; width: 55%;" alt="">
                     <aside class="notes">
                         <ul>
                             <li>People are scared of math, but they shouldn't be</li>
@@ -162,6 +168,21 @@
                         <img src="images/cat-failure.gif" alt="">
                     </section>
                     <section>
+                        <h2>Reliability measures</h2>
+                        <ul>
+                            <li>MTBF = mean time between failures (years per failure)</li>
+                            <li>&lambda; = failures per year</li>
+                            <li>F = failure rate or probability of failure in one year</li>
+                            <li>R = reliability rate (probability of working in one year)</li>
+                        </ul>
+                        <p>$$\lambda = T / MTFB$$</p>
+                        <p>$$F = \lambda / T = 1 / MTBF$$</p>
+                        <p>$$R = 1 - F$$</p>
+                        <aside class="notes">
+                            <p>typical hdd MTBF - 0.3-1M hours (about 35-120 years); MTBF computed in a lab and extrapolated over time</p>
+                        </aside>
+                    </section>
+                    <section>
                         <h2>Statistical independence</h2>
                         <aside class="notes">
                             <ul>
@@ -186,27 +207,15 @@
                           </ul>
                         </aside>
                     </section>
-                    <section>
-                        <h2>Reliability measures</h2>
-                        <ul>
-                            <li>MTBF = mean time between failures (years per failure)</li>
-                            <li>&lambda; = failures per year</li>
-                            <li>F = failure rate or probability of failure in one year</li>
-                            <li>R = reliability rate (probability of working in one year)</li>
-                        </ul>
-                        <p>$$\lambda = T / MTFB$$</p>
-                        <p>$$F = \lambda / T = 1 / MTBF$$</p>
-                        <p>$$R = 1 - F$$</p>
-                        <aside class="notes">
-                            <p>typical hdd MTBF - 1M hours (about 130 years); MTBF computed in a lab and extrapolated over time</p>
-                        </aside>
-                    </section>
                 </section>
                 <section>
                     <section>
                         <h2>Serial reliability</h2>
                         <h4>$$R_{total} = \prod_{i=0}^{n} R_{i}$$</h4>
                         <!-- <p>$$\lambda_{total} = \sum_{i=0}^{n} \lambda_{i}$$</p> -->
+                        <aside class="notes">
+                          <p>Total reliability always lower than worse component</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Serial reliability</h2>
@@ -266,6 +275,7 @@
                     </section>
                     <section>
                         <p>Redundant system, R=0.95</p>
+                          <p style="font-size: 80%;">n - cluster size; k - failures tolerated</p>
                         <table>
                             <thead>
                                 <th>n</th>
