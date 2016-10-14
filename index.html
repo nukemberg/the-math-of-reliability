@@ -35,10 +35,33 @@
             link.href = 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/css/theme/' + theme + '.css';
         }
     </script>
+        <style>
+            .reveal .slides > section.present.really-full, .reveal .slides > section > section.present.really-full {
+                  min-height: 100% !important;
+                  display: flex !important;
+                  flex-direction: column !important;
+                  justify-content: center !important;
+                  position: absolute !important;
+                  top: 0 !important;
+                }
+                section.really-full > h1 {
+                  position: absolute !important;
+                  top: 0 !important;
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                  left: 0 !important;
+                  right: 0 !important;
+                }
 
+                .print-pdf .reveal .slides > section.present.really-full, .print-pdf .reveal .slides > section > section.present.really-full {
+                  min-height: 770px !important;
+                  position: relative !important;
+                }
+        </style>
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
+
     </head>
 
     <body>
@@ -53,13 +76,17 @@
                   <p>t-test, introduced 1908 by william gosset working for guinness. published under the pen name "A. Student" because Claude Guinness treaeted his use of math in the brewry as trade secret</p>
                 </aside>
               </section>
-                <section>
-                    <h1 style="font-size: 120px;">The Math of Reliability</h1>
-                    <p>Avishai Ish-Shalom (@nukemberg)</p>
-                    <p style="display: inline-block; vertical-align: bottom;">
-                        <b>repo:</b> <a href="http://github.com/avishai-ish-shalom/the-math-of-reliability">github.com/avishai-ish-shalom/the-math-of-reliability</a>
-                        <br>Companion IPython notebook: <a href="https://github.com/avishai-ish-shalom/the-math-of-reliability/blob/master/reliability.ipynb">reliability.ipynb</a>
-                    </p>
+                <section class="really-full">
+                    <div>
+                        <h1 style="font-size: 120px;">The Math of Reliability</h1>
+                        <p>Avishai Ish-Shalom (@nukemberg)</p>
+                        <p style="display: inline-block; vertical-align: bottom;">
+                            <b>repo:</b> <a href="http://github.com/avishai-ish-shalom/the-math-of-reliability">github.com/avishai-ish-shalom/the-math-of-reliability</a>
+                            <br>Companion IPython notebook: <a href="https://github.com/avishai-ish-shalom/the-math-of-reliability/blob/master/reliability.ipynb">reliability.ipynb</a>
+                        </p>
+                    </div>
+                    <img src="images/wix-engineering.png" style="background: none; box-shadow: none; border: none; position: absolute; left: 0; bottom: 5%; display: block;">
+
                     <aside class="notes">
                         <ul>
                             <li>Reliability is initimately linked to culture, but that's a different talk</li>
@@ -460,9 +487,13 @@
                     <section data-background="images/final-words.svg">
                         <h3>Reliability is everyone's responsibility</h3>
                     </section>
-                    <section>
-                        <h2>Thank you</h2>
-                        <img src="images/holy-grail-taunt.gif" alt="">
+                    <section class="really-full">
+                        <div>
+                            <h2>Thank you</h2>
+                            <img src="images/holy-grail-taunt.gif" alt="">
+                        </div>
+                        <img src="images/wix-engineering.png" style="background: none; box-shadow: none; border: none; position: absolute; left: -10%; bottom: 0%; display: block;">
+
                     </section>
                 </section>
                 <section>
