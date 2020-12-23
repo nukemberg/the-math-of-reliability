@@ -10,5 +10,5 @@ This repository contains both the lecture slides (`index.html` - using reveal.js
 If you want to learn more about usefull mathematics for software engineering, checkout Heinrich Hartmann's excellent [Statistics for Engineers](https://github.com/HeinrichHartmann/Statistics-for-Engineers) workshop. Heinrich Hartamann's repo also contains a list of books you may want to follow up on.
 
 ## Video
-<iframe src="https://player.vimeo.com/video/173452527" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/173452527">DevOpsdays Amsterdam 2016</a> from <a href="https://vimeo.com/devopsdays">info@devopsdays.org</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+- [DevOpsDays Amsterdam 2016](https://vimeo.com/173452527)
+- [DevOpsDays TLV 2015](https://youtu.be/jACAYK63dtg)
